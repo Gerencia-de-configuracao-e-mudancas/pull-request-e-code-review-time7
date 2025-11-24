@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Comandos Git — Parte 2</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; line-height: 1.5; padding: 24px; max-width: 900px; margin: auto; }
+    h1 { color: #0b5; }
+    pre { background:#f4f4f4; padding:12px; border-radius:6px; overflow:auto; }
+    .bug { color: red; font-weight: 700; }
+    .mission { background:#fff7e6; border-left:4px solid #ffcc00; padding:12px; margin-bottom:16px; }
+    footer { margin-top:30px; font-size:0.9rem; color:#555 }
+    a { color:#045; text-decoration: none }
+  </style>
+</head>
+<body>
+  <h1>Comandos Git — Parte 2</h1>
+
+  <div class="mission">
+    <strong>Missão (continuação):</strong> Apague todos os nomes em vermelho também neste arquivo. Eles são os bugs a serem removidos.
+  </div>
+
+  <h2>7) Criar e trocar branches</h2>
+  <p>Comando: <pre><code>git branch nova-feature
+git checkout nova-feature
+# ou em uma linha
+ git switch -c nova-feature</code></pre>
+  Branches permitem trabalhar em funcionalidades isoladas. Aqui um exemplo com crédito indevido a <span class="bug">Ana</span> que deve ser removido.</p>
+
+  <h2>8) Atualizar do remoto</h2>
+  <p>Comando: <pre><code>git pull origin main</code></pre>
+  Puxa mudanças do remoto e tenta mesclar no branch atual.</p>
+
+  <h2>9) Rebase e merge</h2>
+  <p>Comando merge: <pre><code>git checkout main
+git merge nova-feature</code></pre>
+  Rebase (reaplicar seus commits): <pre><code>git checkout nova-feature
+git rebase main</code></pre>
+  Use com cuidado; rebase reescreve histórico. No exemplo, removemos a referência a <span class="bug">Renato</span> antes de mesclar.</p>
+
+  <h2>10) Stash (guardar mudanças temporariamente)</h2>
+  <p>Comando: <pre><code>git stash
+# recuperar
+git stash pop</code></pre>
+  Útil quando precisa trocar de branch sem commitar mudanças incompletas.</p>
+
+  <h2>11) Reset e revert</h2>
+  <p>Reset (mover HEAD): <pre><code>git reset --hard HEAD~1</code></pre>
+  Revert (cria um novo commit que desfaz outro): <pre><code>git revert <hash-do-commit></code></pre>
+  Se um commit acidentalmente adicionou o nome <span class="bug">Sofia</span>, use revert para desfazer sem reescrever histórico remoto.</p>
+
+  <h2>12) Tags e releases</h2>
+  <p>Comando: <pre><code>git tag -a v1.0 -m "Versão 1.0"
+git push origin v1.0</code></pre>
+  Marcar versões importantes do projeto.</p>
+
+  <footer>
+    Depois de apagar todos os nomes em vermelho: verifique com <code>git status</code>, faça <code>git add</code>, <code>git commit</code> e <code>git push</code>.
+    Voltar para a <a href="git-commands-pt1.html">Parte 1</a>.
+  </footer>
+</body>
+</html>
