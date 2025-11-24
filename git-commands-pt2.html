@@ -26,7 +26,6 @@
 git checkout nova-feature
 # ou em uma linha
  git switch -c nova-feature</code></pre>
-  Branches permitem trabalhar em funcionalidades isoladas. Aqui um exemplo com crédito indevido a <span class="bug">Ana</span> que deve ser removido.</p>
 
   <h2>8) Atualizar do remoto</h2>
   <p>Comando: <pre><code>git pull origin main</code></pre>
@@ -37,7 +36,6 @@ git checkout nova-feature
 git merge nova-feature</code></pre>
   Rebase (reaplicar seus commits): <pre><code>git checkout nova-feature
 git rebase main</code></pre>
-  Use com cuidado; rebase reescreve histórico. No exemplo, removemos a referência a <span class="bug">Renato</span> antes de mesclar.</p>
 
   <h2>10) Stash (guardar mudanças temporariamente)</h2>
   <p>Comando: <pre><code>git stash
@@ -48,7 +46,6 @@ git stash pop</code></pre>
   <h2>11) Reset e revert</h2>
   <p>Reset (mover HEAD): <pre><code>git reset --hard HEAD~1</code></pre>
   Revert (cria um novo commit que desfaz outro): <pre><code>git revert <hash-do-commit></code></pre>
-  Se um commit acidentalmente adicionou o nome <span class="bug">Sofia</span>, use revert para desfazer sem reescrever histórico remoto.</p>
 
   <h2>12) Tags e releases</h2>
   <p>Comando: <pre><code>git tag -a v1.0 -m "Versão 1.0"
